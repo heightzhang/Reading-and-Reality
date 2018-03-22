@@ -1,5 +1,6 @@
-### Welcome to use MarkDown
-1.全部遍历完数组对象后 ，再进行判断执行相应操作
+# Welcome to Array Object
+## 1.全部遍历完数组对象后 ，再进行判断执行相应操作
+
 案例模拟
 ```JS
 let list = [{
@@ -68,7 +69,7 @@ test4(newArr)
 console.log(list)
 ```
 
-2.数组对象去重
+## 2.数组对象去重
 ```JS
 ```
 
@@ -130,7 +131,7 @@ function removeRepeatArrObj (arr) {
 var result = _.uniqWith(spread, _.isEqual)
 console.log('结果', result)
 ```
-4.数组对象指定值的完全去重
+## 3.数组对象指定值的完全去重
 案例模拟
 ```JS
 // demo
@@ -172,7 +173,7 @@ var spread = [{
 var result = _.unionBy(spread, 'id')
 console.log('结果', result)
 ```
-5.？数组对象的指定值去重(后面覆盖前面)
+## 4.？数组对象的指定值去重(后面覆盖前面)
 案例模拟
 ```JS
 var spread = [{
@@ -237,7 +238,7 @@ var result = removeRepeatArrObj(spread)
 console.log('结果', result)
 ```
 
-6.获得数组对象中子孙的值
+## 5.获得数组对象中子孙的值
 案例模拟
 ```JS
 const arr = [{
@@ -273,7 +274,7 @@ function getIds (arr) {
 var abc = getIds(arr)
 console.log('结果', abc) // [1, 2, 3, 4]
 
-7.传递四个参数，find的层层筛选
+## 6.传递四个参数，find的层层筛选
 案例模拟
 ```JS
 const list = [{
@@ -333,7 +334,7 @@ function findLast (arr, params) {
 console.log(findLast(list, params)) // '体育馆街道'
 ```
 
-8.参数赋值
+## 7.参数赋值
 案例模拟：
 ```JS
 let obj1 = {
