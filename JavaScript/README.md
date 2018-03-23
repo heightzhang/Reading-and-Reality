@@ -357,6 +357,89 @@ let targetObj = {
 }
 */
 ```
+## 9.传入单个，搜索最底层的数据
+案例模拟
+```JS
+var json = [{
+  label: '北京市',
+  value: 1,
+  children: [{
+    label: '海淀区',
+    value: 10,
+    children: [{
+      label: '街道100',
+      value: 100
+    }, {
+      label: '街道1000',
+      value: 1000
+    }, {
+      label: '街道10000',
+      value: 10000
+    }]
+  }]
+}, {
+  label: '2北京市',
+  value: 2,
+  children: [{
+    label: '2海淀区',
+    value: 20,
+    children: [{
+      label: '2街道',
+      value: 200
+    }]
+  }]
+}]
+// 要求： 封装一个函数，传入10000，输出 街道10000
+```
 
-
+解决方法
+```JS
+// jiangzg
+let cache_data = {
+  array: [],
+  currentid: 0
+}
+//扁平化数组
+function formatData(arr, pid) {
+  let result = []
+  arr.forEach((item) => {
+    result.push({
+      label: item.label,
+      value: item.value,
+      pid: pid
+    })
+    if (({}).toString.call(item.children) === '[object Array]') {
+      //地柜处理 children 链接返回的结果
+      result = result.concat(formatData(item.children, item.value))
+    }
+  })
+  return result
+}
+// -------------------- 格式化数据后的查找操作 -------------------------------
+let formatDaraArray = formatData(json, 0)
+console.log(formatDaraArray)
+//更具目标值查找地址
+function getResult(formatDaraArray, targetValue) {
+  //把数组处理成目标值
+  //如 [1,2,3] 目标值是3
+  if (({}).toString.call(targetValue) === '[object Array]') {
+    targetValue = targetValue[targetValue.length - 1]
+  }
+  let result = []
+  //由于数据已经扁平化啦，这里就可以一次循环查找
+  formatDaraArray.forEach((item) => {
+    if (item.value == targetValue) {
+      //由于是反向查找的，所以unshift讲找到的数据添加在结果的头部
+      result.unshift(item)
+      if (item.pid) {
+        //同理 由于是反向查找的，所以unshift讲找到的数据添加在结果的头部
+        result.unshift(...getResult(formatDaraArray, item.pid))
+      }
+    }
+  })
+  return result
+}
+let put = 10000
+console.log(getResult(formatDaraArray, put))
+```
 
