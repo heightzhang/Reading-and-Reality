@@ -351,12 +351,40 @@ let obj2 = {
 }
 // 封装一个函数，传递obj1与obj2参数， return以下数据
 /*
+ * 思路： 保持第一个对象中的属性名不变，第二对象中出现相同的属性名，则将属性值覆盖到对应的属性值下。
+ * 条件：判断第二个对象中的属性名是否跟第一个对象的属性名相同
+ *      遍历第二个对象中的属性名，遍历第一个对象中的属性名。
+ * 执行：如果相同则值覆盖，否则不进行任何操作。
 let targetObj = {
   cat_id: 1,
   name: 'John'
 }
 */
+解决方法
+```JS
+// 原始方法
+function test (obj1, obj2) {
+  for (var prop in obj2) {
+    for (var prop2 in obj1) {
+      if (prop2 === prop) {
+        obj1[prop] = obj2[prop]
+      }
+    }
+  }
+  return obj1
+}
+// ES6方法
+function test2 (obj1,obj2) {
+  // 拿到共同元素属性名，通过属性名去判断
+  Object.keys(obj1).forEach(key => {
+    if (key in obj2) obj1[key] = obj2[key]
+  })
+  return obj1
+}
+console.log(test2(obj1,obj2))
 ```
+
+
 ## 9.传入单个，搜索最底层的数据
 案例模拟
 ```JS
