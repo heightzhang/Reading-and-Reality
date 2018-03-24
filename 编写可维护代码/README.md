@@ -63,7 +63,7 @@ var  arr = [1, 2, 3]
 console.log(Array.isArray(arr)) // true
 
 // ------------- 对象 -----------------------
-// 检测属性
+// 检测属性"count"是否存在对象中
 if ("count" in object) {
   // 一些代码
 }
