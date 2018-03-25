@@ -5,3 +5,4 @@
 ## To do list
  * JavaScript API文档
  * JavaScript 代码库
+ * 以项目为出发点，开发各种小应用
