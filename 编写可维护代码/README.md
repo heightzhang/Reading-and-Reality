@@ -1,4 +1,9 @@
+# 掘金发布
+* 编程风格： [如何培养良好的编码风格](https://juejin.im/post/5aa7567bf265da238c3a566b)
+* 编程实践： [如何培养良好的编程实践](https://juejin.im/post/5ab7ad2bf265da23826df289)
+
 # 我对编写可维护的JavaScript的应用
+
 ## 编程风格
 
 ### 1.检测值
