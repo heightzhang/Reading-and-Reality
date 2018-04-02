@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.bootcss.com/lodash.js/4.17.4/lodash.js"></script>
+		<script>
+		  //#数组
+		  //块 ：二二等分，组成新的数组
+		  let arr = _.chunk(['a', 'b', 'c', 'd'], 2);
+		  console.log('chunk',arr)  // → [['a', 'b'], ['c', 'd']]
+		  //筛选：把一个数组中的 默认的0 false之类的去掉。
+		  let com =  _.compact([0, 1, false, 2, '', 3]);
+		  console.log('compact',com) // → [1, 2, 3]
+		  //不同：找出不同的部分
+		  let diff = _.difference([2, 1], [2, 3]);
+		  console.log('difference',diff)  //→ [1]
+		  //合并
+		  var array = [1];
+      var other = _.concat(array, 2, 3, 4);
+		  console.log('concat',other)
+
+
+		  //#对象
+		  //把几个对象合并为一个对象。
+		  let obj = _.assign({ 'a': 1 }, { 'b': 2 }, { 'c': 3 });
+		  console.log('assign',obj) // ➜ { 'a': 1, 'b': 2, 'c': 3 }
+      //深度克隆  (包含方法的复制)
+      var objects = [{ 'a': 1 }, { 'b': 2,'clone':()=>{console.log(123)}}];
+      var deep = _.cloneDeep(objects);
+      console.log('clone',deep[0] === objects[0]);// => false
+      deep[1].clone()
+      //#采集
+      //匹配
+		  var users = [
+       { 'user': 'barney', 'age': 36, 'active': true },
+       { 'user': 'fred',   'age': 40, 'active': false },
+       { 'user': 'ared',   'age': 24, 'active': false },
+       { 'user': 'ered',   'age': 80, 'active': false }
+      ];
+      var fil = _.filter(users, {'age':24});
+      console.log('filter',fil)
+      // 条件式过滤数组对象  -- 相同条件
+      var fil2 = _.filter(users, (item) => {
+          return item.age === 40 || item.age === 24
+      })
+      console.log('条件筛选数组对象', fil2)
+      // 查找
+      var fil3 = _.find(users, function(o){
+        return o.age < 40
+      })
+      console.log('查找', fil3)
+
+    // 正序
+    var sort=_.sortBy(users, function(item) {
+      return item.age;
+    });
+    console.log('正序', sort)
+    // 倒序
+    var reserve = _.sortBy(users, function(item) {
+      return -item.age;
+    });
+    console.log('倒序', reserve)
+
+    // 任意随机数
+    // Naive utility method
+    function getRandomNumber(min, max){
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    console.log('js随机数', getRandomNumber(15, 20))
+    // Lodash
+    let random = _.random(15, 20);
+    console.log('lodash随机数', random)
+
+    var users = [
+      { 'user': 'barney', 'age': 306, 'active': true },
+      { 'user': 'fred',   'age': 40, 'active': false },
+      { 'dfa': 'fred',   'age': 40, 'active': false }
+    ]
+    var c = _.map(users, 'age')
+    console.log('12313', c)
+
+
+		</script>
+	</head>
+	<body>
+	  moment 是一个 JavaScript 日期处理类库  http://momentjs.cn/
+    loadsh 处理对象/数组的一个工具库 https://lodash.com/docs/4.17.4
+	</body>
+</html>
