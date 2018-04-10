@@ -71,6 +71,7 @@ console.log(list)
 
 ## 2.数组对象去重
 ```JS
+
 ```
 
 ## 3.数组对象指定值的部分去重
@@ -260,7 +261,7 @@ const arr = [{
 /*
   * 要求：获取所有元素子孙内的id 输出[1,2,3,4]
 */
-```JS
+​```JS
 解决方法
 // jiangzg
 function getIds (arr) {
@@ -361,7 +362,7 @@ let targetObj = {
 }
 */
 解决方法
-```JS
+​```JS
 // 原始方法
 function test (obj1, obj2) {
   for (var prop in obj2) {
