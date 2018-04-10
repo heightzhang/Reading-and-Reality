@@ -27,5 +27,5 @@ ps:计划并不是一成不变的，会随着变化而变化
 | Angular_Cnode | 基于Angular的Cnode社区   | [项目地址](https://github.com/heightzhang/Angular_Cnode) | [演示地址](http://heightzhang.cn/Angular_Cnode/src/indexTest.html#!/index/home) |
 | Vue_BIibili   | 基于Vue的音乐电台        | [项目地址](https://github.com/heightzhang/Vue_BIibili)   | [演示地址](http://heightzhang.cn/Vue_BIibili/dist/index.html#/app/newSong) |
 | JS_PlaneGames | 基于JS的在线打飞机小游戏 | [项目地址](https://github.com/heightzhang/JS_PlaneGames) | [演示地址](http://heightzhang.cn/JS_PlaneGames/PlaneGame_zg/dafeiji.html) |
-| JQ_MeiLiHui   | 基于JQ的魅力惠电商       | [项目地址](https://github.com/heightzhang/JQ_MeiLiHui)   | [演示地址]( <http://www.mei.com/index.html)                  |
+| JQ_MeiLiHui   | 基于JQ的魅力惠电商       | [项目地址](https://github.com/heightzhang/JQ_MeiLiHui)   | [演示地址](http://www.mei.com/index.html)                  |
 
