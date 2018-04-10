@@ -35,7 +35,7 @@
 
 * [markdown目录生成器](https://github.com/jianghai/mcg)
 * [markdown自动生成导航目录](https://github.com/chris-peng/markdown_nav)
-* [README文件语法解读](https://github.com/heightzhang?page=2&q=&tab=stars&utf8=%E2%9C%93)
+* [README文件语法解读](https://github.com/guodongxiaren/README)
 
 
 
