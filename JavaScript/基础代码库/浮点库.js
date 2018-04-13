@@ -107,3 +107,5 @@ function round(num: number, ratio: number): number {
 
 export { strip, plus, minus, times, divide, round, digitLength, float2Fixed };
 export default { strip, plus, minus, times, divide, round, digitLength, float2Fixed };
+
+// 文章来源：https://github.com/camsong/blog/issues/9
