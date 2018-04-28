@@ -4,10 +4,10 @@
 # To do list 
 
 - [x] 编写可维护的JavaScript   2018.3.6 -- 2018.3.26
-- [ ] JavaScript API文档   2018.3.27
-- [ ] 常用数组对象的处理
-- [ ] JavaScript 代码库的封装
-- [ ] JavaScript 代码库的包装
+- [x] JavaScript API文档   2018.3.27
+- [x] 常用数组对象的处理
+- [x] JavaScript 代码库的封装
+- [x] JavaScript 代码库的包装
 - [ ] 以项目为出发点，开发各种小应用
 
 ps:计划并不是一成不变的，会随着变化而变化
