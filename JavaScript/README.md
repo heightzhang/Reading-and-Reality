@@ -1,4 +1,23 @@
-# Api
+# 基础
+
+## 心法
+
+- [JavaScript基础心法——数据类型](https://github.com/axuebin/articles/issues/3)
+- [JavaScript基础心法——this](https://github.com/axuebin/articles/issues/6)
+- [JavaScript基础心法——call apply bind](https://github.com/axuebin/articles/issues/7)
+- [JavaScript基础心法——深浅拷贝](https://github.com/axuebin/articles/issues/20)
+
+
+
+## 数据结构及算法
+
+- [JavaScript数据结构及算法——排序](https://github.com/axuebin/articles/issues/12)
+
+- [JavaScript数据结构及算法——查找](https://github.com/axuebin/articles/issues/13)
+
+  ​
+
+## Api
 
 ## 对象
 
@@ -26,4 +45,5 @@
 # 工具库
 
 * [moment插件&&loadsh插件](https://github.com/heightzhang/Reading-and-Reality/blob/master/JavaScript/%E5%B7%A5%E5%85%B7%E5%BA%93/8.moment%E6%8F%92%E4%BB%B6%26%26loadsh%E6%8F%92%E4%BB%B6.html)
+
 
