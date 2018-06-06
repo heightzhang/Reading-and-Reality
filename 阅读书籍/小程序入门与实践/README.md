@@ -47,10 +47,14 @@ onUnload: function () {
 
 ### 技巧类
 1. 索引是变量，修改数组的值
+
 示例代码：
+
 // 修改某个数组的动态的值 --- 提前将数组对象准备好
 // 索引index是变量， value是变量
 var shipmentTypeObj = "shipmentType[" + index + "].code"
 this.setData({[shipmentTypeObj]: value})
+
+
 
 
