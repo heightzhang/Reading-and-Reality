@@ -1,7 +1,7 @@
 # Welcome to Read Article
 
 
-# To do list 
+# To do list
 
 三
 - [x] 编写可维护的JavaScript   2018.3.6 -- 2018.3.26
@@ -21,7 +21,7 @@ ps:计划并不是一成不变的，会随着变化而变化
 
 # JavaScript
 
-​	
+​
 
 * [JavaScript API文档](https://github.com/heightzhang/Reading-and-Reality/tree/master/JavaScript)
 
