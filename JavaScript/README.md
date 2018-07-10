@@ -28,7 +28,7 @@
 
 * [数组](https://github.com/heightzhang/Reading-and-Reality/blob/master/JavaScript/API/%E6%95%B0%E7%BB%84.md)
 * [数组的常见问题](https://github.com/heightzhang/Reading-and-Reality/blob/master/JavaScript/API/%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.md)
-* [数组对象的常见操作](https://github.com/heightzhang/Reading-and-Reality/issues/1)
+* 数组对象的常见操作([数组去重](https://github.com/heightzhang/Reading-and-Reality/issues/2),[数组查找](https://github.com/heightzhang/Reading-and-Reality/issues/3),[数组封装API](https://github.com/heightzhang/Reading-and-Reality/issues/4))
 
 ## 字符串
 
