@@ -2,7 +2,7 @@
  * 判断数据类型代码库
  * @author heightzhang
  */
-class lang {
+class judge {
   isNull(value) {
     if (value == null || value == undefined) return true
     if (this.isString(value)) {
