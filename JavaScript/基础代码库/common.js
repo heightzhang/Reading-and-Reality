@@ -64,5 +64,3 @@ const common =  {
     )
   }
 }
-
-export default lang
