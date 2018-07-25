@@ -69,6 +69,7 @@ const common =  {
    * @param {Array/Obj} source
    */
   deepClone: source => {
+    /*
     // 判断复制的目标是数组还是对象
     const targetObj = source.constructor === Array ? [] : {};
     // 遍历目标
@@ -85,5 +86,12 @@ const common =  {
       }
     }
     return targetObj;
+    */
+    let clone = Object.assign({}, obj);
+    console.log('clone', clone)
+    Object.keys(clone).forEach(
+      key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])
+    );
+    return clone;
   }
 }
