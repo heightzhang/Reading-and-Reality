@@ -87,10 +87,9 @@ const common =  {
     }
     return targetObj;
     */
-    let clone = Object.assign({}, obj);
-    console.log('clone', clone)
+    let clone = Object.assign({}, source);
     Object.keys(clone).forEach(
-      key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])
+      key => (clone[key] = typeof source[key] === 'object' ? deepClone(source[key]) : source[key])
     );
     return clone;
   }
