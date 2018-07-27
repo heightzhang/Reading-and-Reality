@@ -113,6 +113,7 @@ const common =  {
    * @param {function} fn
    * @param {number} wait
    * scroll 时更新样式，如随动效等
+   * 拓展版: https://juejin.im/post/5b45fa596fb9a04fad3a0268
    */
   throttle: (fn, wait) => {
     let inThrottle, lastFn, lastTime;
