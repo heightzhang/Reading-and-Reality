@@ -92,5 +92,46 @@ const common =  {
       key => (clone[key] = typeof source[key] === 'object' ? deepClone(source[key]) : source[key])
     );
     return clone;
-  }
+  },
+  /**
+   * 3
+   * 函数防抖
+   * @param {function} fn
+   * @param {number} ms
+   * 文字输入、自动完成、搜索框的keyup事件,射击游戏中的mousedown、keydown,window的resize等
+   */
+  debounce: (fn, ms = 0) => {
+    let timeoutId;
+    return function(...args) {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => fn.apply(this, args), ms);
+    };
+  },
+  /**
+   * 4
+   * 函数节流
+   * @param {function} fn
+   * @param {number} wait
+   * scroll 时更新样式，如随动效等
+   */
+  throttle: (fn, wait) => {
+    let inThrottle, lastFn, lastTime;
+    return function() {
+      const context = this,
+        args = arguments;
+      if (!inThrottle) {
+        fn.apply(context, args);
+        lastTime = Date.now();
+        inThrottle = true;
+      } else {
+        clearTimeout(lastFn);
+        lastFn = setTimeout(function() {
+          if (Date.now() - lastTime >= wait) {
+            fn.apply(context, args);
+            lastTime = Date.now();
+          }
+        }, wait - (Date.now() - lastTime));
+      }
+    };
+  },
 }
