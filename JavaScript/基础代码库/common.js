@@ -115,7 +115,7 @@ const common =  {
    * scroll 时更新样式，如随动效等
    * 拓展版: https://juejin.im/post/5b45fa596fb9a04fad3a0268
    */
-  throttle: (fn, wait) => {
+  throttle: (fn, wait = 10) => {
     let inThrottle, lastFn, lastTime;
     return function() {
       const context = this,
@@ -139,6 +139,7 @@ const common =  {
    * 5
    * 函数节流 by requestAnimationFrame
    * @param {function} fn
+   * https://www.cnblogs.com/xiaohuochai/p/5777186.html
    */
   throttleByRaf:(fn) => {
     let isRunning = false
