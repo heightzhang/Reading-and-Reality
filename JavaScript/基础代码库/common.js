@@ -135,4 +135,20 @@ const common =  {
       }
     };
   },
+  /**
+   * 5
+   * 函数节流 by requestAnimationFrame
+   * @param {function} fn
+   */
+  throttleByRaf:(fn) => {
+    let isRunning = false
+    return function () {
+      if (isRunning) return
+      isRunning = true
+      window.requestAnimationFrame(() => {
+        fn()
+        isRunning = false
+      })
+    }
+  }
 }
