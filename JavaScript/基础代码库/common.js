@@ -1,4 +1,3 @@
-
 const common =  {
   /**
    * 判断数据类型代码库
@@ -151,5 +150,37 @@ const common =  {
         isRunning = false
       })
     }
+  },
+  /**
+   * 6
+   * 蹦床函数 解决尾递归的调用栈溢出 =》实质将递归执行改为循环执行，保证调用栈只有一层；
+   * @param {fn} fn 递归函数
+   * example
+   * var sum = trampoline(function(x, y) {
+      if (y > 0) {
+        return sum(x + 1, y - 1)
+      }
+      else {
+        console.log(x)
+        return x
+      }
+    });
+   * http://es6.ruanyifeng.com/#docs/function
+   */
+  trampoline: (fn) => {
+    let value
+    let active = false
+    let accumulated = []
+    return function accumulator() {
+      accumulated.push(arguments)
+      if (!active) {
+        active = true
+        while (accumulated.length) {
+          value = fn.apply(this, accumulated.shift())
+        }
+        active = false
+        return value
+      }
+    };
   }
 }
