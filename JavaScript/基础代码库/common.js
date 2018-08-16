@@ -183,4 +183,16 @@ const common =  {
       }
     };
   }
+  // --- 时间处理 -----
+  /**
+   * 7.时间格式处理
+   * @param {string} string 时间字符串
+   * example
+   * 20180408000000 => 2018-04-08 00:00:00
+   * result: formatTimeStr(20180408000000) // 2018-04-08 00:00:00
+   */
+  formatTimeStr: (str, type) {
+    let i = 0,_type = type||"xxxx-xx-xx xx:xx:xx";
+    return _type .replace(/x/g, () => str[i++])
+  }
 }
