@@ -186,16 +186,36 @@ const common =  {
   // --- 时间处理 -----
   /**
    * 7.时间格式处理
-   * @param {string} string 时间字符串
+   * 时间戳转化为年 月 日 时 分 秒
+   * @param {number} number 传入时间戳
+   * @param {format} string 返回格式，支持自定义，但参数必须与matchStr里保持一致
    * example
-   * 20180408000000 => 2018-04-08 00:00:00
-   * result: formatTimeStr(20180408000000) // 2018-04-08 00:00:00
+   * 1534262400 => 2018-08-15 00:00:00
+   * formatTime(1534262400, 'Y-M-D h:m:s') // 2018-08-15 00:00:00
    */
-  formatTimeStr: (str, type) {
-    let i = 0,_type = type||"xxxx-xx-xx xx:xx:xx";
-    return _type .replace(/x/g, () => str[i++])
+  formatTime: (number, formate)  {
+    // 补零操作
+    function addPreZero(n) {
+      n = n.toString()
+      return n[1] ? n : '0' + n
+    }
+    // 将年、月、日、时、分、秒组合成一个数组
+    var arr = [];
+    var date = new Date(number * 1000);
+    arr.push(date.getFullYear());
+    arr.push(addPreZero(date.getMonth() + 1));
+    arr.push(addPreZero(date.getDate()));
+    arr.push(addPreZero(date.getHours()));
+    arr.push(addPreZero(date.getMinutes()));
+    arr.push(addPreZero(date.getSeconds()));
+    console.log('arr', arr)
+    // 匹配到matchStr的字符，则用对应的数字替换
+    var matchStr = ['Y', 'M', 'D', 'h', 'm', 's'];
+    arr.forEach((item, idx) => {
+      formate = formate.replace(matchStr[idx], item)
+    })
+    return formate;
   },
-  // this.sortBy('sort', this.sortRecord)
   // --- 数组的处理 -------
   /**
    * 8.数组对象的排序
