@@ -4,7 +4,7 @@ const common =  {
    * @author heightzhang
   */
   // 常用：
-  isNull:value => {
+  isNull (value) {
     if (value == null || value == undefined) return true
     if (this.isString(value)) {
       if (value.trim().length == 0) return true
@@ -15,36 +15,36 @@ const common =  {
       return true
     }
     return false
-  }
-  isUndefined:val => {
-    return val === undefined
-  }
-  isEmpty:val => {
-   return val == null || !(Object.keys(val) || val).length
-  }
+  },
+  isUndefined (value) {
+    return value === undefined
+  },
+  isEmpty (value) {
+   return value == null || !(Object.keys(value) || value).length
+  },
   // 基本数据类型:
-  isString:value => {
+  isString (value) {
     return value != null && value != undefined && value.constructor == String
-  }
-  isNumber:value => {
+  },
+  isNumber (value) {
     return value != null && value != undefined && value.constructor == Number
-  }
-  isBoolean:value => {
+  },
+  isBoolean (value) {
     return value != null && value != undefined && value.constructor == Boolean
-  }
+  },
   // 引用数据类型:
-  isArray:value => {
+  isArray (value) {
     return value != null && value != undefined && value.constructor == Array
-  }
-  isObject: value => {
+  },
+  isObject (value) {
     return value != null && value != undefined && value.constructor == Object
-  }
-  isFunction:value => {
+  },
+  isFunction (value) {
     return value != null && value != undefined && value.constructor == Function
-  }
-  isSymbol:val => {
-    return  typeof val === 'symbol'
-  }
+  },
+  isSymbol (value) {
+    return  typeof value === 'symbol'
+  },
   /**
    * 基础操作的代码库
    * @author heightzhang
@@ -57,7 +57,7 @@ const common =  {
    * getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam', surname: 'Smith'}
    * getURLParameters('google.com'); // {}
    */
-  getURLParameters: url => {
+  getURLParameters (url) {
     (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(
       (a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a), {}
     )
@@ -67,7 +67,7 @@ const common =  {
    * [数组/对象的深拷贝(递归法)]
    * @param {Array/Obj} source
    */
-  deepClone: source => {
+  deepClone (source) {
     /*
     // 判断复制的目标是数组还是对象
     const targetObj = source.constructor === Array ? [] : {};
@@ -99,7 +99,7 @@ const common =  {
    * @param {number} ms
    * 文字输入、自动完成、搜索框的keyup事件,射击游戏中的mousedown、keydown,window的resize等
    */
-  debounce: (fn, ms = 0) => {
+  debounce (fn, ms = 0) {
     let timeoutId;
     return function(...args) {
       clearTimeout(timeoutId);
@@ -114,7 +114,7 @@ const common =  {
    * scroll 时更新样式，如随动效等
    * 拓展版: https://juejin.im/post/5b45fa596fb9a04fad3a0268
    */
-  throttle: (fn, wait = 10) => {
+  throttle (fn, wait = 10) {
     let inThrottle, lastFn, lastTime;
     return function() {
       const context = this,
@@ -140,7 +140,7 @@ const common =  {
    * @param {function} fn
    * https://www.cnblogs.com/xiaohuochai/p/5777186.html
    */
-  throttleByRaf:(fn) => {
+  throttleByRaf (fn) {
     let isRunning = false
     return function () {
       if (isRunning) return
@@ -167,7 +167,7 @@ const common =  {
     });
    * http://es6.ruanyifeng.com/#docs/function
    */
-  trampoline: (fn) => {
+  trampoline (fn) {
     let value
     let active = false
     let accumulated = []
@@ -182,7 +182,7 @@ const common =  {
         return value
       }
     };
-  }
+  },
   // --- 时间处理 -----
   /**
    * 7.时间格式处理
@@ -193,22 +193,21 @@ const common =  {
    * 1534262400 => 2018-08-15 00:00:00
    * formatTime(1534262400, 'Y-M-D h:m:s') // 2018-08-15 00:00:00
    */
-  formatTime: (number, formate)  {
-    // 补零操作
-    function addPreZero(n) {
-      n = n.toString()
-      return n[1] ? n : '0' + n
-    }
+  // 时间补零操作
+  addPreZero (n) {
+    n = n.toString()
+    return n[1] ? n : '0' + n;
+  },
+  formatTime (number, formate) {
     // 将年、月、日、时、分、秒组合成一个数组
     var arr = [];
     var date = new Date(number * 1000);
     arr.push(date.getFullYear());
-    arr.push(addPreZero(date.getMonth() + 1));
-    arr.push(addPreZero(date.getDate()));
-    arr.push(addPreZero(date.getHours()));
-    arr.push(addPreZero(date.getMinutes()));
-    arr.push(addPreZero(date.getSeconds()));
-    console.log('arr', arr)
+    arr.push(this.addPreZero(date.getMonth() + 1));
+    arr.push(this.addPreZero(date.getDate()));
+    arr.push(this.addPreZero(date.getHours()));
+    arr.push(this.addPreZero(date.getMinutes()));
+    arr.push(this.addPreZero(date.getSeconds()));
     // 匹配到matchStr的字符，则用对应的数字替换
     var matchStr = ['Y', 'M', 'D', 'h', 'm', 's'];
     arr.forEach((item, idx) => {
@@ -226,7 +225,7 @@ const common =  {
    * var result = arr.sort(sortBy('id'))
    * result => [{id: 1}, {id: 2}, {id: 3}]
    */
-  sortBy: (key, isAscend) {
+  sortBy (key, isAscend) {
     // 第二个参数没有传递 默认升序排列
     if (isAscend === undefined) {
       isAscend = 1
