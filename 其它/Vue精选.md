@@ -2,6 +2,8 @@
 
 ## Vue精选
 
+[vue源码揭秘-黄轶](https://github.com/ustbhuangyi/vue-analysis)
+
 ### 实践后好用的组件库整理归档
 
 |                        组件名                         |         组件功能描述          | demo |
