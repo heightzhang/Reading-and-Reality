@@ -194,5 +194,35 @@ const common =  {
   formatTimeStr: (str, type) {
     let i = 0,_type = type||"xxxx-xx-xx xx:xx:xx";
     return _type .replace(/x/g, () => str[i++])
+  },
+  // this.sortBy('sort', this.sortRecord)
+  // --- 数组的处理 -------
+  /**
+   * 8.数组对象的排序
+   * @param {key} string 指定key值的排序
+   * @param {isAscend} boolean 是否升序(true/flase) ？ 升序 : 降序
+   * example
+   * var arr = [{id: 1}, {id: 2}, {id: 3}]
+   * var result = arr.sort(sortBy('id'))
+   * result => [{id: 1}, {id: 2}, {id: 3}]
+   */
+  sortBy: (key, isAscend) {
+    // 第二个参数没有传递 默认升序排列
+    if (isAscend === undefined) {
+      isAscend = 1
+    } else {
+      isAscend = (isAscend) ? 1 : -1
+    }
+    return (a, b) => {
+      a = a[key]
+      b = b[key]
+      if (a < b) {
+        return isAscend * -1
+      }
+      if (a > b) {
+        return isAscend * 1
+      }
+      return 0
+    }
   }
 }
