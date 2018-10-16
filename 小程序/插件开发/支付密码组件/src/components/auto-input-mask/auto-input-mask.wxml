@@ -1,0 +1,15 @@
+<!--components/auto-input-mask/auto-input-mask.wxml-->
+<view class='auto-input-mask-index'>
+  <view class='content'>
+    <view class='close-button' bindtap='close'>×</view>
+    <view class='title'><text>请输入验证码</text></view>
+    <auto-input 
+      inputValue="{{autoInputConfig.inputValue}}"
+      maxlength="{{autoInputConfig.maxlength}}"
+      valueLength="{{autoInputConfig.valueLength}}"
+      width="{{autoInputConfig.width}}"
+      height="{{autoInputConfig.height}}"
+      password="{{autoInputConfig.password}}">
+    </auto-input>
+  </view>
+</view>

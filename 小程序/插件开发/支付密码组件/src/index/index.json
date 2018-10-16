@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "auto-input-mask": "../components/auto-input-mask/auto-input-mask"
+  }
+}

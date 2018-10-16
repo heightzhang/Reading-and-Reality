@@ -1,0 +1,32 @@
+<!--components/auto-input/auto-input.wxml-->
+<view class='auto-input-index'>
+  <!-- 输入框表格 -->
+  <view 
+    class='auto-input_view' 
+    catchtap='onClickView'
+    style='width:{{width}};height:{{height}};'>
+    <view 
+      class="'auto-input-item' {{index === active ? 'active' : '' }}"
+      wx:for="{{maxlength}}"
+      wx:for-index="index"
+      wx:key="index">
+      <!-- <view
+        wx:if="{{valueLength === item}}" 
+        class='cursor'>
+      </view> -->
+      <view
+        wx:if="{{valueLength >= item + 1}}" 
+        class="{{password?'password-dot':''}}">
+        {{password ? '' : arr[index]}}
+      </view>
+    </view>
+  </view>
+  <!-- 输入框隐藏 -->
+  <input 
+    class='auto-input_container'
+    maxlength="{{maxlength}}"
+    focus='{{isFocusInput}}'
+    value="{{inputValue}}"
+    bindinput="getValue">
+  </input>
+</view>

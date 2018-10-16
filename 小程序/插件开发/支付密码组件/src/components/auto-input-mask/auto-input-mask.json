@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "auto-input": "../auto-input/auto-input"
+  }
+}
