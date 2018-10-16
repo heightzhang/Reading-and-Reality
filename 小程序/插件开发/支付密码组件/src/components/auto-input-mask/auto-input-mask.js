@@ -22,8 +22,13 @@ Component({
       // 输入框的密码位数
       valueLength: 0,
       // 是否是密码类型 默认为false
-      password: false
-      // 是否显示光标
+      password: false,
+      // 是否启用对焦样式
+      isFocus: true,
+      // 是否自动对焦
+      isFocusClass: true,
+      // 是否自动提交
+      isNext: false
     }
   },
 

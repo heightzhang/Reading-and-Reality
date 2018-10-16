@@ -25,7 +25,7 @@
   <input 
     class='auto-input_container'
     maxlength="{{maxlength}}"
-    focus='{{isFocusInput}}'
+    focus='{{isFocus}}'
     value="{{inputValue}}"
     bindinput="getValue">
   </input>
