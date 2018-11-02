@@ -28,7 +28,13 @@
 八
 - [x] [reduce，some,every函数的用法](https://www.jianshu.com/p/6445a8f11611) 8.1 简书文章发表
 
+十一
+- [X] 第一周 - 文字跑马灯
 
+
+
+Temp
+- [ ] scrollLeft , offset的图解图
 
 ps:计划并不是一成不变的，会随着变化而变化
 
