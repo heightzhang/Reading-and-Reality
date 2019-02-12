@@ -34,4 +34,6 @@ ps:计划并不是一成不变的，会随着变化而变化
 * [`论坛相关`](https://github.com/heightzhang/Reading-and-Reality/blob/master/%E5%85%B6%E5%AE%83/%E8%AE%BA%E5%9D%9B%E7%9B%B8%E5%85%B3.md)
 * [`项目相关`](https://github.com/heightzhang/Reading-and-Reality/blob/master/%E5%85%B6%E5%AE%83/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3.md)
 
+# 回顾
 
+[2018年文章写作记录进度表](https://github.com/heightzhang/Reading-and-Reality/issues/7)
