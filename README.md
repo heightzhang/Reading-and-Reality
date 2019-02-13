@@ -10,7 +10,7 @@
 
 二
 
-blob
+关于图片的处理： [图片的三种表现形式](https://github.com/heightzhang/Reading-and-Reality/issues/9)
 
 ps:计划并不是一成不变的，会随着变化而变化
 
