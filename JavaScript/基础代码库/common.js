@@ -2,6 +2,7 @@ const common =  {
   /**
    * 判断数据类型代码库
    * @author heightzhang
+   * 待做 引入moment库，将时间戳转为年月日时分秒  => this.$moment(time).format('YYYY-MM-DD HH:mm')
   */
   // 常用：
   isNull (value) {
